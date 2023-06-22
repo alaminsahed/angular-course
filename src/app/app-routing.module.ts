@@ -22,6 +22,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./calculator/calculator.module').then((m) => m.CalculatorModule),
   },
+  {
+    path: 'review',
+    loadChildren: () =>
+      import('./review/review.module').then((m) => m.ReviewModule),
+  },
 ];
 
 @NgModule({
