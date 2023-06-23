@@ -1,3 +1,7 @@
-<div>
-  <p appRating [rating]="2"></p>
+<div class="card-container">
+  <div *ngFor="let review of reviews" class="card">
+    <h2>{{ review.name }}</h2>
+    <p appRating [rating]="review.rating"></p>
+    <p>{{ review.comment }}</p>
+  </div>
 </div>

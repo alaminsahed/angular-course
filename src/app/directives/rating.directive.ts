@@ -15,10 +15,11 @@ export class RatingDirective implements OnChanges {
   constructor(private el: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    let fullStar = Math.floor(this.rating);
-    let halfStar = this.rating - fullStar;
+    const fullStar = Math.floor(this.rating);
+    const halfStar = Math.ceil(this.rating - fullStar);
+    const emptyStar = 5 - fullStar - halfStar;
 
     this.el.nativeElement.innerHTML =
-      '&#8902;'.repeat(fullStar) + '&#8901;'.repeat(halfStar);
+      '✪'.repeat(fullStar) + '✭'.repeat(halfStar) + '✩'.repeat(emptyStar);
   }
 }
