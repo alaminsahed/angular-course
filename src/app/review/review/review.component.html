@@ -1,7 +1,15 @@
 <div class="card-container">
-  <div *ngFor="let review of reviews" class="card">
+  <div
+    *ngFor="let review of reviews"
+    class="card"
+    [ngStyle]="{
+      'background-color': review.rating < 3 ? 'gray' : '',
+      color: review.rating < 3 ? 'white' : ''
+    }"
+  >
     <h2>{{ review.name }}</h2>
     <p appRating [rating]="review.rating"></p>
     <p>{{ review.comment }}</p>
+    <p *ngIf="review.comment === ''" [color]="'red'">No comment</p>
   </div>
 </div>

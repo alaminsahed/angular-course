@@ -35,4 +35,10 @@ export const reviewsData = [
     rating: 1,
     comment: 'Not good product',
   },
+  {
+    id: 7,
+    name: 'user 7',
+    rating: 1,
+    comment: '',
+  },
 ];
