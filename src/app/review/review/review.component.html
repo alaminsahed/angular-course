@@ -9,7 +9,10 @@
   >
     <h2>{{ review.name }}</h2>
     <p appRating [rating]="review.rating"></p>
-    <p>{{ review.comment }}</p>
-    <p *ngIf="review.comment === ''" [color]="'red'">No comment</p>
+    <!-- <p>{{ review.comment }}</p>
+    <p *ngIf="review.comment === ''" [color]="'red'">No comment</p> -->
+    <p [color]="!review.comment ? 'red' : ''">
+      {{ review.comment ? review.comment : "No comment" }}
+    </p>
   </div>
 </div>
