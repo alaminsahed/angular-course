@@ -1,4 +1,5 @@
 <div class="card-container">
+  <p>{{ myText | reverse }}</p>
   <div
     *ngFor="let review of reviews"
     class="card"
@@ -14,5 +15,6 @@
     <p [color]="!review.comment ? 'red' : ''">
       {{ review.comment ? review.comment : "No comment" }}
     </p>
+    <p>Today's date is {{ currentDate | date }}</p>
   </div>
 </div>

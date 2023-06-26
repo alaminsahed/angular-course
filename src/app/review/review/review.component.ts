@@ -8,6 +8,11 @@ import { reviewsData } from '../../utils/data';
 })
 export class ReviewComponent {
   reviews = reviewsData;
+  currentDate: Date;
+  myText: string;
 
-  constructor() {}
+  constructor() {
+    this.currentDate = new Date();
+    this.myText = 'I want to test custom pipe example';
+  }
 }
