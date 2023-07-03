@@ -5,9 +5,20 @@
       <input type="text" id="username" formControlName="username" />
     </div>
     <div>
+      <span *ngIf="username && username.invalid && username.touched"
+        >This input is invalid</span
+      >
+    </div>
+    <div>
       <label for="password">Password</label>
       <input type="password" id="password" formControlName="password" />
     </div>
-    <button type="submit">Login</button>
+    <div>
+      <span *ngIf="password && password.invalid && password.touched"
+        >This input is invalid</span
+      >
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
   </form>
+  <div *ngFor="let user of users">{{ user.name }} --- {{ user.age }}</div>
 </div>
