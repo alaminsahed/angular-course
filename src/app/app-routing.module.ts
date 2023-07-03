@@ -27,6 +27,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./review/review.module').then((m) => m.ReviewModule),
   },
+  {
+    path: 'loginForm',
+    loadChildren: () =>
+      import('./login-form/login-form.module').then((m) => m.LoginFormModule),
+  },
 ];
 
 @NgModule({
