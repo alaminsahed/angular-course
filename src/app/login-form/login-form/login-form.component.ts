@@ -9,8 +9,15 @@ import { UserDataService } from 'src/app/service/user-data.service';
 })
 export class LoginFormComponent {
   users: any;
+  submittedData: any;
   constructor(private usersData: UserDataService) {
-    this.users = this.usersData.users();
+    this.users = this.usersData.users().subscribe((data) => {
+      this.users = data;
+    });
+
+    this.usersData.postUser(this.submittedData).subscribe((data) => {
+      console.log('aaaa', data);
+    });
   }
   loginForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.email]),
@@ -21,6 +28,7 @@ export class LoginFormComponent {
   });
   loginUsers() {
     console.log('++', this.loginForm.value);
+    this.submittedData = this.loginForm.value;
   }
   get username() {
     return this.loginForm.get('username');

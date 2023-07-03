@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserDataService {
-  constructor() {}
+  url = 'https://jsonplaceholder.typicode.com/users';
+  constructor(private http: HttpClient) {}
   users() {
-    return [
-      { name: 'Peter', age: 29, email: 'abc@gmail.com' },
-      { name: 'John', age: 25, email: 'sasa' },
-      { name: 'Mary', age: 21, email: 'sasa' },
-      { name: 'Sara', age: 24, email: 'sasa' },
-      { name: 'Smith', age: 26, email: 'sasa' },
-    ];
+    return this.http.get(this.url);
+  }
+
+  postUser(data: any) {
+    return this.http.post(this.url, data);
   }
 }
