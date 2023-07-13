@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./dataflow-child.component.scss'],
 })
 export class DataflowChildComponent {
-  message = 'message from child';
+  childMessage = 'message from child';
   @Input() fromParent: string;
 
   constructor() {
