@@ -8,10 +8,24 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DataflowParentComponent } from './dataflow-parent/dataflow-parent.component';
 import { DataflowChildComponent } from './dataflow-child/dataflow-child.component';
+import { FormNormalComponent } from './form-normal/form-normal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, DataflowParentComponent, DataflowChildComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    DataflowParentComponent,
+    DataflowChildComponent,
+    FormNormalComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

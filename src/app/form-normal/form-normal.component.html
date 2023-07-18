@@ -1,0 +1,22 @@
+<div>
+  <h1>Normal Form</h1>
+  <!-- import FormsModule in app.module.ts -->
+  <input type="text" [(ngModel)]="postTitle" />
+  <br /><br />
+  <textarea type="text" [(ngModel)]="postDetails"></textarea>
+  <br /><br />
+  <input type="text" [(ngModel)]="postUrl" />
+  <br /><br />
+  <input type="checkbox" [(ngModel)]="postBg" />
+  <br /><br />
+</div>
+
+<h2>Print</h2>
+
+<div>
+  <h3 [ngStyle]="{ backgroundColor: postBg ? 'red' : '' }">
+    Title: {{ postTitle }}
+  </h3>
+  <h3>Details: {{ postDetails }}</h3>
+  <h3>Url: <a [href]="postUrl" alt="postUrl" target="_blank">More</a></h3>
+</div>
