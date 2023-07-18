@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dataflow-child',
@@ -8,8 +8,14 @@ import { Component, Input } from '@angular/core';
 export class DataflowChildComponent {
   childMessage = 'message from child';
   @Input() fromParent: string;
+  childMessage2 = 'message from child 2';
+  @Output() messageEvent = new EventEmitter<string>();
 
   constructor() {
     this.fromParent = '';
+  }
+
+  sendMessage() {
+    this.messageEvent.emit(this.childMessage2);
   }
 }

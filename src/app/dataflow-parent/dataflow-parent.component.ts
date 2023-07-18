@@ -8,6 +8,7 @@ import { DataflowChildComponent } from '../dataflow-child/dataflow-child.compone
 })
 export class DataflowParentComponent {
   parentMessage = 'message from parent component';
+  childMessage = '';
 
   @ViewChild(DataflowChildComponent) childMsg: any;
   constructor() {
@@ -18,5 +19,9 @@ export class DataflowParentComponent {
   ngAfterViewInit() {
     // it works when child component loaded
     this.childMsg = this.childMsg.childMessage;
+  }
+
+  receiveMessage($event: any) {
+    this.childMessage = $event;
   }
 }

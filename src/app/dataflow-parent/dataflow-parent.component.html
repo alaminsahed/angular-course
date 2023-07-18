@@ -1,3 +1,7 @@
 <p>dataflow-parent works!</p>
-<app-dataflow-child [fromParent]="parentMessage"></app-dataflow-child>
+<app-dataflow-child
+  [fromParent]="parentMessage"
+  (messageEvent)="receiveMessage($event)"
+></app-dataflow-child>
 <p>{{ childMsg }}</p>
+<p>{{ childMessage }}</p>
