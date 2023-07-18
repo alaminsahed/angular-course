@@ -13,10 +13,14 @@
 
 <h2>Print</h2>
 
-<div>
+<div *ngIf="postTitle !== ''; else noPost">
   <h3 [ngStyle]="{ backgroundColor: postBg ? 'red' : '' }">
     Title: {{ postTitle }}
   </h3>
   <h3>Details: {{ postDetails }}</h3>
   <h3>Url: <a [href]="postUrl" alt="postUrl" target="_blank">More</a></h3>
 </div>
+
+<ng-template #noPost>
+  <h3>No post</h3>
+</ng-template>
