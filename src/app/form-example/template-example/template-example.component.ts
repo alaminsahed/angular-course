@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-example',
@@ -10,6 +10,10 @@ export class TemplateExampleComponent {
   constructor() {}
 
   onSubmit(f: NgForm) {
+    console.log(f);
+  }
+
+  onChange(f: NgControl) {
     console.log(f);
   }
 }
