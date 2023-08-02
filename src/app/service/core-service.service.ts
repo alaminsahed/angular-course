@@ -21,4 +21,8 @@ export class PostService {
     { id: 4, title: 'Post 4', content: 'Content 4' },
     { id: 5, title: 'Post 5', content: 'Content 5' },
   ];
+
+  addPost(post: any) {
+    this.postList.push(post);
+  }
 }

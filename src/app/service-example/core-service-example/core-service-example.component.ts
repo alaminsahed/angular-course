@@ -21,6 +21,15 @@ export class CoreServiceExampleComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  addNewData() {
+    let newPost = {
+      id: 6,
+      title: 'Post 6',
+      content: 'Content 6',
+    };
+    this.postService.addPost(newPost);
+  }
 }
 
 //when we use providers in dependency injection, it will create new instance of service. if we want to use same instance of service in all component, we need to use providers in app.module.ts
