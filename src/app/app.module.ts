@@ -10,8 +10,8 @@ import { DataflowParentComponent } from './dataflow-parent/dataflow-parent.compo
 import { DataflowChildComponent } from './dataflow-child/dataflow-child.component';
 import { FormNormalComponent } from './form-normal/form-normal.component';
 import { FormsModule } from '@angular/forms';
-import { TempleFormComponent } from './temple-form/temple-form.component';
 import { ServiceExampleModule } from './service-example/service-example.module';
+import { FormExampleModule } from './form-example/form-example.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,6 @@ import { ServiceExampleModule } from './service-example/service-example.module';
     DataflowParentComponent,
     DataflowChildComponent,
     FormNormalComponent,
-    TempleFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +28,7 @@ import { ServiceExampleModule } from './service-example/service-example.module';
     HttpClientModule,
     FormsModule,
     ServiceExampleModule,
+    FormExampleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
