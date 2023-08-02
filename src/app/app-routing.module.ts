@@ -39,6 +39,13 @@ const routes: Routes = [
     path: 'normalForm',
     component: FormNormalComponent,
   },
+  {
+    path: 'service-example',
+    loadChildren: () =>
+      import('./service-example/service-example.module').then(
+        (m) => m.ServiceExampleModule
+      ),
+  },
 ];
 
 @NgModule({
