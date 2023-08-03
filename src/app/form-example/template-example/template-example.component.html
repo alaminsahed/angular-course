@@ -1,5 +1,5 @@
 <div class="container">
-  <form #f="ngForm" (submit)="onSubmit(f)">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Name</label>
       <input
@@ -42,7 +42,9 @@
         ngModel
       ></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+      Submit
+    </button>
   </form>
 </div>
 

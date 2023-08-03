@@ -10,7 +10,7 @@ export class TemplateExampleComponent {
   constructor() {}
 
   onSubmit(f: NgForm) {
-    console.log(f);
+    console.log(f.value);
   }
 
   onChange(f: NgControl) {
